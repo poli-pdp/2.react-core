@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import style from "./VideoItem.module.css";
+import Views from "./Views";
 const VideoItem = ({ title, duration, date, description }) => {
   return (
     <div className={style.container}>
@@ -7,6 +8,7 @@ const VideoItem = ({ title, duration, date, description }) => {
       <span>{duration}</span>
       <span>{date}</span>
       <p>{description}</p>
+      <Views />
     </div>
   );
 };
