@@ -7,10 +7,10 @@ const FormControlado = () => {
   });
 
   const handlerInputEmail = (e) => {
-    console.log(e);
+    setForm({ ...form, email: e.target.value });
   };
   const handlerInputPassword = (e) => {
-    console.log(e);
+    setForm({ ...form, password: e.target.value });
   };
 
   return (
