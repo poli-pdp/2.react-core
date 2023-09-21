@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 console.log("Pre-Render");
 
 const LifeCycle = () => {
   console.log("Logic-Render");
   const [counter1, setCounter1] = useState(0);
   const [counter2, setCounter2] = useState(0);
+
+  useEffect(() => {
+    console.log("UseEffect Sin dependencias");
+    return () => {
+      console.log("Desmonta componente");
+    };
+  });
+  useEffect(() => {
+    console.log("UseEffect con dependencias vacio");
+  }, []);
+  useEffect(() => {
+    console.log("UseEffect con dependencias [counter1]");
+  }, [counter1]);
+  useEffect(() => {
+    console.log("UseEffect con dependencias [counter1,counter2]");
+  }, [counter1, counter2]);
+
   return (
     <div>
       {console.log("Return-Render")}
